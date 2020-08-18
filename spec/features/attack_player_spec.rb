@@ -4,4 +4,12 @@ feature 'Attack player test' do
     click_button('Attack')
     expect(page).to have_content 'Bart attacked Lisa'
   end
+
+  scenario 'reduce Player 2 HP by 10' do
+   sign_in_and_play
+   click_button 'Attack'
+   click_link 'OK'
+   expect(page).not_to have_content 'Lisa: 60HP'
+   expect(page).to have_content 'Lisa: 50HP'
+ end
 end
