@@ -8,7 +8,7 @@ feature 'Switch turns test' do
       scenario 'after player 1 attacks' do
         sign_in_and_play
         click_button 'Attack'
-        click_link 'OK'
+        click_button 'OK'
         expect(page).not_to have_content "Bart's turn"
         expect(page).to have_content "Lisa's turn"
       end
