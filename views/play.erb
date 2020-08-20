@@ -6,6 +6,13 @@
 
 <p><%= @game.current_turn.name %>'s turn</p>
 
+<% if @game.player_1.hit_points == 0 %>
+<p><%= @game.player_1.name %> loses the battle!</p>
+<% elsif @game.player_2.hit_points == 0 %>
+<p><%= @game.player_2.name %> loses the battle!</p>
+<% end %>
+
+
 <form action="/attack">
   <input type="submit" value="Attack">
 </form>
